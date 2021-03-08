@@ -6,7 +6,7 @@ import Loading from './components/backdrop';
 function App() {
   return (
     <div className="App">
-       {/* <Loading/> */}
+       <Loading/>
      <AppContainer/>
    
     </div>
