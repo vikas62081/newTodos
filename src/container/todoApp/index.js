@@ -34,7 +34,7 @@ const AppContainer = () => {
         setTodosToLocal(newTodos)
     }
 
-    return <div style={{ maxWidth: "1000px", minWidth: 300, margin: "20px auto" }}>
+    return <div style={{ maxWidth: "1000px", minWidth: 300, margin: "20px auto",padding:"0 5px" }}>
         <h1 align="center">My Todos</h1>
         <AddTodo addTodo={addTodo} />
 
