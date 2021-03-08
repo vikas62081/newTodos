@@ -6,8 +6,9 @@ const {id,name,description,completed}=todo
     return  <Grid container style={{ backgroundColor: '#444444', padding: "5px 20px", borderRadius: 3,margin:"8px 0" }}>
             <Grid item sm={8}>
                 <Typography variant="h4" 
-                style={completed?{ color: "#eaaa18", fontFamily: "cursive",textDecoration: "line-through" }:{ color: "#eaaa18", fontFamily: "cursive" }}>{name}</Typography>
-                <Typography variant="body1" style={{ color: "#efe7e7", fontFamily: "cursive" }}>
+                style={completed?{ color: "#eaaa18", fontFamily: "Comic Sans MS",textDecoration: "line-through" }
+                :{ color: "#eaaa18", fontFamily: "Comic Sans MS" }}>{name}</Typography>
+                <Typography variant="body1" style={{ color: "#efe7e7", fontFamily: "inherit" }}>
     {description}</Typography>
             </Grid>
             <Grid container sm={4} spacing={1} item alignContent="center">
