@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 import Todo from '../../components/todo'
 import AddTodo from '../../components/addTodo'
 import LoadMore from '../../components/loadMore'
-import { setTodosToLocal, getTodosFromLocal } from '../../utility'
+import { setTodosToLocal, getTodosFromLocal, showNotification } from '../../utility'
 import { emitter } from '../../components/backdrop'
 
 const AppContainer = () => {
@@ -10,25 +10,25 @@ const AppContainer = () => {
     const [todos, setTodos] = useState(() => getTodosFromLocal())
     const [rowsLast, setRowLast] = useState(MAX_SHOW)
     const addTodo = (title, description) => {
-        emitter.emit("PROCESSING")
+       showNotification("Task created successfully")
         const newTodos = [{ id: Math.random(), name: title, description, completed: false }, ...todos]
         setTodos(newTodos)
         setTodosToLocal(newTodos)
     }
     const showMoreClicked = () => {
-        emitter.emit("PROCESSING")
+       emitter.emit("PROCESSING")
         setRowLast(rowsLast + MAX_SHOW)
     }
 
     const deleteTodo = (id) => {
-        emitter.emit("PROCESSING")
+        showNotification("Task deleted successfully")
         const newTodos = todos.filter(todo => todo.id !== id)
         setTodos(newTodos)
         setTodosToLocal(newTodos)
     }
 
     const completeTask = (id) => {
-        emitter.emit("PROCESSING")
+        showNotification("Task completed successfully")
         const newTodos = todos.map(todo => (todo.id === id ? { ...todo, completed: !todo.completed } : todo))
         setTodos(newTodos)
         setTodosToLocal(newTodos)
