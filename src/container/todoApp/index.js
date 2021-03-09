@@ -4,6 +4,7 @@ import AddTodo from '../../components/addTodo'
 import LoadMore from '../../components/loadMore'
 import { setTodosToLocal, getTodosFromLocal, showNotification } from '../../utility'
 import { emitter } from '../../components/backdrop'
+import Search from '../../components/search'
 
 const AppContainer = () => {
     const MAX_SHOW = 4
@@ -37,7 +38,7 @@ const AppContainer = () => {
     return <div style={{ maxWidth: "1000px", minWidth: 300, margin: "20px auto",padding:"0 5px" }}>
         <h1 align="center">My Todos</h1>
         <AddTodo addTodo={addTodo} />
-
+{/* <Search/> */}
         <div style={{ maxHeight: 400, overflow: "auto" }}>
             {todos.length > 0 ? todos.slice(0, rowsLast).map(todo =>
                 <Todo todo={todo} deleteTodo={deleteTodo} completeTask={completeTask} />) :
